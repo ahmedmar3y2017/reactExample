@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { use, useEffect, useState, useRef } from "react";
+import "./App.css";
+import ListData from "./components/ListData/ListData";
+import Search from "./components/Search/Search";
+import StartExample from "./components/StartExample/StartExample";
+import TaskExample from "./components/TaskExample/TaskExample";
+import GithubExample from "./components/GithubExample/GithubExample";
+import TimerExample from "./components/TimerExample/TimerExample";
+import UseReducer from "./components/UseReducer/UseReducer";
+import InputForm from "./components/CustomHook/InputForm";
+import usePrevState from "./components/PrevState/usePrevState";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header></Header>
+
+      <Outlet></Outlet>
+
+      <Footer></Footer>
+
+      {/* <StartExample></StartExample> */}
+      {/* <TaskExample></TaskExample> */}
+
+      {/* <GithubExample></GithubExample> */}
+
+      {/* <TimerExample> </TimerExample> */}
+
+      {/* <UseReducer></UseReducer> */}
+
+      {/* <InputForm></InputForm> */}
+    </>
   );
 }
 
