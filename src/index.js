@@ -10,6 +10,8 @@ import ErrorPage from "./routes/ErrorPage";
 import UserLayout from "./routes/UserLayout";
 import UserInfo from "./routes/UserInfo";
 import UserEdit from "./routes/UserEdit";
+import Login from "./routes/Login";
+import Register from "./routes/Register";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +31,8 @@ const router = createBrowserRouter([
       { index: true, element: <div> User Home </div> },
       { path: ":userId/info", element: <UserInfo></UserInfo> },
       { path: "edit", element: <UserEdit></UserEdit> },
+      { path: "login", element: <Login></Login> },
+      { path: "register", element: <Register></Register> },
     ],
   },
 ]);

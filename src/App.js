@@ -12,7 +12,7 @@ import usePrevState from "./components/PrevState/usePrevState";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import { Outlet } from "react-router-dom";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   return (
     <>

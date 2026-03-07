@@ -22,6 +22,14 @@ const UserLayout = () => {
           Edit
         </NavLink>
         <a onClick={logouthandler}>Logout</a>
+
+        <NavLink to="login" className={navStyle}>
+          Login
+        </NavLink>
+
+        <NavLink to="register" className={navStyle}>
+          Register
+        </NavLink>
       </nav>
       <Outlet></Outlet>
     </div>
