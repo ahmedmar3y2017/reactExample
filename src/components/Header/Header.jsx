@@ -24,7 +24,9 @@ const Header = () => {
           <NavLink to="counterRedux" className={navStyle}>
             Counter redux
           </NavLink>
-
+          <NavLink to="counterRedux1" className={navStyle}>
+            Counter redux1
+          </NavLink>
           <NavLink to="user" className={navStyle}>
             User
           </NavLink>

@@ -13,6 +13,9 @@ import UserEdit from "./routes/UserEdit";
 import Login from "./routes/Login";
 import Register from "./routes/Register";
 import CounterRedux from "./routes/CounterRedux";
+import CounterRedux1 from "./routes/CounterRedux1";
+import { Provider } from "react-redux";
+import { counterStore } from "./state/store";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +27,14 @@ const router = createBrowserRouter([
       { path: "about", element: <About /> },
       { path: "contactUs", element: <Contact /> },
       { path: "counterRedux", element: <CounterRedux /> },
+      {
+        path: "counterRedux1",
+        element: (
+          <Provider store={counterStore}>
+            <CounterRedux1 />
+          </Provider>
+        ),
+      },
     ],
   },
   {
