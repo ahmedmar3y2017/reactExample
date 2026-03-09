@@ -12,6 +12,7 @@ import UserInfo from "./routes/UserInfo";
 import UserEdit from "./routes/UserEdit";
 import Login from "./routes/Login";
 import Register from "./routes/Register";
+import CounterRedux from "./routes/CounterRedux";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
       { index: true, element: <Index></Index> },
       { path: "about", element: <About /> },
       { path: "contactUs", element: <Contact /> },
+      { path: "counterRedux", element: <CounterRedux /> },
     ],
   },
   {
