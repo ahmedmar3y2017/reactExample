@@ -1,9 +1,9 @@
 import React from "react";
+import { Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 
 const CounterRedux1 = () => {
-  const count = useSelector((state) => state.count);
-  const name = useSelector((state) => state.name);
+  const state = useSelector((state) => state);
 
   const dispatch = useDispatch();
 
@@ -15,13 +15,30 @@ const CounterRedux1 = () => {
     dispatch({ type: "DECREASE", payload: { decrease: 5, name: "Decrease" } });
   };
 
+  const togglehandler = () => {
+    dispatch({ type: "TOGGLE" });
+  };
+
   return (
     <div className="text-2xl font-bold mb-4">
-      <div>Counter Redux : {count}</div>
-      <div>Name: {name}</div>
+      {state.toggle && (
+        <>
+          <div>Counter Redux : {state.count}</div>
+          <div>Name: {state.name}</div>
 
-      <button onClick={increaseHandler}>Increase</button>
-      <button onClick={decreaseHandler}>Decrease</button>
+          <Button variant="success" onClick={increaseHandler}>
+            Increase
+          </Button>
+          <Button variant="danger" onClick={decreaseHandler}>
+            Decrease
+          </Button>
+        </>
+      )}
+
+      <br />
+      <Button variant="primary" onClick={togglehandler}>
+        Show / Hide toggle
+      </Button>
     </div>
   );
 };
