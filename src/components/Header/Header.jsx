@@ -27,6 +27,10 @@ const Header = () => {
           <NavLink to="counterRedux1" className={navStyle}>
             Counter redux1
           </NavLink>
+          <NavLink to="counterRedux2" className={navStyle}>
+            Counter redux2
+          </NavLink>
+
           <NavLink to="user" className={navStyle}>
             User
           </NavLink>

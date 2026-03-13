@@ -16,6 +16,8 @@ import CounterRedux from "./routes/CounterRedux";
 import CounterRedux1 from "./routes/CounterRedux1";
 import { Provider } from "react-redux";
 import { counterStore } from "./state/store";
+import CounterRedux2 from "./routes/CounterRedux2";
+import store1 from "./state/store/configureStore";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +34,14 @@ const router = createBrowserRouter([
         element: (
           <Provider store={counterStore}>
             <CounterRedux1 />
+          </Provider>
+        ),
+      },
+      {
+        path: "counterRedux2",
+        element: (
+          <Provider store={store1}>
+            <CounterRedux2 />
           </Provider>
         ),
       },
