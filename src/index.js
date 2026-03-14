@@ -18,6 +18,13 @@ import { Provider } from "react-redux";
 import { counterStore } from "./state/store";
 import CounterRedux2 from "./routes/CounterRedux2";
 import store1 from "./state/store/configureStore";
+import CloneElement from "./routes/CloneElement";
+import Button from "./components/CloneElement/Button";
+import ButtonGroup from "./components/CloneElement/ButtonGroup";
+
+const buttonhandler = () => {
+  console.log("Button clicked");
+};
 
 const router = createBrowserRouter([
   {
@@ -43,6 +50,25 @@ const router = createBrowserRouter([
           <Provider store={store1}>
             <CounterRedux2 />
           </Provider>
+        ),
+      },
+      {
+        path: "CloneElement",
+        element: (
+          <CloneElement>
+            <div className="d-flex flex-column gap-2">
+              <Button name="Button 1" onClick={buttonhandler}>
+                Single
+              </Button>
+            </div>
+
+            <div className="d-flex flex-column gap-2">
+              <ButtonGroup>
+                <Button>Button First</Button>
+                <Button>Button Second</Button>
+              </ButtonGroup>
+            </div>
+          </CloneElement>
         ),
       },
     ],

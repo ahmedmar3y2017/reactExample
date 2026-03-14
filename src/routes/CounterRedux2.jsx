@@ -33,7 +33,7 @@ const CounterRedux2 = () => {
 
   const authHandler = (state) => {
     if (state.isAuthenticated) {
-      dispatch(logout({count : 20 }));
+      dispatch(logout({ count: 20 }));
     } else {
       dispatch(login());
     }

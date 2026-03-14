@@ -30,6 +30,9 @@ const Header = () => {
           <NavLink to="counterRedux2" className={navStyle}>
             Counter redux2
           </NavLink>
+          <NavLink to="cloneElement" className={navStyle}>
+            Clone Element
+          </NavLink>
 
           <NavLink to="user" className={navStyle}>
             User
