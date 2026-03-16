@@ -26,6 +26,64 @@ const buttonhandler = () => {
   console.log("Button clicked");
 };
 
+const dynamicComponent = [
+  {
+    componentname: Button,
+    data: {
+      name: "Single Button ",
+      onClick: () => {
+        console.log("Button clicked dynamic single");
+      },
+    },
+  },
+  {
+    componentname: ButtonGroup,
+    data: [
+      {
+        name: "Button First dynamic",
+        onClick: () => {
+          console.log("Button clicked dynamic first");
+        },
+      },
+      {
+        name: "Button Second dynamic",
+        onClick: () => {
+          console.log("Button clicked dynamic second");
+        },
+      },
+    ],
+  },
+];
+
+const buttonComponents = dynamicComponent
+  .filter((item) => item.componentname)
+  .map((item, index) => {
+    const Component = item.componentname;
+    if (Array.isArray(item.data)) {
+      return (
+        <Component key={index}>
+          {item.data.map((buttonData, btnIndex) => (
+            <Button
+              key={btnIndex}
+              name={buttonData.name}
+              onClick={buttonData.onClick}
+              className={"primary"}
+            />
+          ))}
+        </Component>
+      );
+    } else {
+      return (
+        <Component
+          key={index}
+          name={item.data.name}
+          onClick={item.data.onClick}
+          className={"primary"}
+        />
+      );
+    }
+  });
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -68,6 +126,8 @@ const router = createBrowserRouter([
                 <Button>Button Second</Button>
               </ButtonGroup>
             </div>
+
+            <div className="d-flex flex-column gap-2">{buttonComponents}</div>
           </CloneElement>
         ),
       },
